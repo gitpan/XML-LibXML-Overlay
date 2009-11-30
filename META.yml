@@ -1,0 +1,21 @@
+---
+name: XML-LibXML-Overlay
+version: 0.1
+author:
+  - 'Alexander Keusch <kalex@cpan.org>'
+abstract: Overlays for XML files
+license: perl
+resources:
+  license: http://dev.perl.org/licenses/
+requires:
+  XML::LibXML: 0
+provides:
+  XML::LibXML::Overlay:
+    file: lib/XML/LibXML/Overlay.pm
+    version: 0.1
+  XML::LibXML::Overlay::Document:
+    file: lib/XML/LibXML/Overlay/Document.pm
+generated_by: Module::Build version 0.280801
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.2.html
+  version: 1.2
