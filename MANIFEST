@@ -4,8 +4,8 @@ lib/XML/LibXML/Overlay.pm
 lib/XML/LibXML/Overlay/Document.pm
 Makefile.PL
 MANIFEST
+META.yml
 README
 t/XML-LibXML-Overlay.t
 t/xml/overlay.xml
 t/xml/target.xml
-META.yml

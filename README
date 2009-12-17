@@ -19,8 +19,8 @@ SYNOPSIS
       #     <isbn>9780596007645</isbn>
       #   </book>
       # </catalog>
-      
-  # overlay.xml
+
+      # overlay.xml
       ####
       # <overlay>
       #   <target xpath="/catalog/book[@id='book0']/author[text()='Delete Me!']">
@@ -36,20 +36,20 @@ SYNOPSIS
       #     </action>
       #   </target>
       # </overlay>
-      
-  use XML::LibXML;
+
+      use XML::LibXML;
       use XML::LibXML::Overlay;
-      
-  my $overlay = XML::LibXML::Overlay->load_xml(
+
+      my $overlay = XML::LibXML::Overlay->load_xml(
         'location' => '/path/to/overlay.xml',
       );
       my $target = XML::LibXML->load_xml(
         'location' => '/path/to/target.xml',
       );
-      
-  $overlay->apply_to($target);
-      
-  # do whatever you want with $target
+
+      $overlay->apply_to($target);
+
+      # do whatever you want with $target
 
 DESCRIPTION
     XML::LibXML::Overlay allowes to apply overlay files to XML files. This
@@ -104,7 +104,7 @@ DETAILS
 
 METHODS
   load_xml
-    Can be used link "load_xml" in XML::LibXML, but returns a
+    Can be used as "load_xml" in XML::LibXML, but returns a
     XML::LibXML::Overlay::Document instead of a XML::LibXML::Document.
 
 SEE ALSO

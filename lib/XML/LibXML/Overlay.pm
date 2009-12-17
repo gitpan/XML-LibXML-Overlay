@@ -3,16 +3,18 @@ package XML::LibXML::Overlay;
 use strict;
 use warnings;
 
-our $VERSION = '0.1';
+our $VERSION = '0.2';
 
 use base qw(XML::LibXML);
 
+use XML::LibXML::Overlay::Document;
+
 sub load_xml {
     my $self = shift;
-    
+
     my $dom = $self->SUPER::load_xml(@_);
     bless $dom, 'XML::LibXML::Overlay::Document';
-    
+
     return $dom;
 }
 
@@ -42,7 +44,7 @@ XML::LibXML::Overlay - Overlays for XML files
   #     <isbn>9780596007645</isbn>
   #   </book>
   # </catalog>
-  
+
   # overlay.xml
   ####
   # <overlay>
@@ -59,19 +61,19 @@ XML::LibXML::Overlay - Overlays for XML files
   #     </action>
   #   </target>
   # </overlay>
-  
+
   use XML::LibXML;
   use XML::LibXML::Overlay;
-  
+
   my $overlay = XML::LibXML::Overlay->load_xml(
     'location' => '/path/to/overlay.xml',
   );
   my $target = XML::LibXML->load_xml(
     'location' => '/path/to/target.xml',
   );
-  
+
   $overlay->apply_to($target);
-  
+
   # do whatever you want with $target
 
 =head1 DESCRIPTION
@@ -96,7 +98,7 @@ Specifies the root element, and contains any target element.
 
 =head3 target
 
-Selectes one or more nodes of the target document given by the <i>xpath</i> attribute. 
+Selectes one or more nodes of the target document given by the <i>xpath</i> attribute.
 Target Elements contain any number of action elements.
 
 =head3 action
@@ -136,7 +138,7 @@ Removes the specified attribute.
 
 =head2 load_xml
 
-Can be used link L<XML::LibXML/load_xml>, but returns a L<XML::LibXML::Overlay::Document>
+Can be used as L<XML::LibXML/load_xml>, but returns a L<XML::LibXML::Overlay::Document>
 instead of a L<XML::LibXML::Document>.
 
 =head1 SEE ALSO

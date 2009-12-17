@@ -4,7 +4,7 @@ my $build = Module::Build->new(
     license     => 'perl',
     dist_author => 'Alexander Keusch <kalex@cpan.org>',
     requires     => {
-        'XML::LibXML'  => '0',
+        'XML::LibXML'  => '1.70',
     },
     create_makefile_pl => 'passthrough',
     create_readme => 1,
